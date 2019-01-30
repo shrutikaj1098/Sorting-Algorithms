@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main(void) {
+  printf("Selection sort\n");
+  int array[10],i,n,j,min,temp;
+  printf("Enter no. of elements to be sorted\n");
+  scanf("%d",&n);
+  printf("Enter %d elements to be sorted in an array\n ",n);
+  for(i=0;i<n;i++)
+  scanf("%d",&array[i]);
+
+  //Selection sort code...
+
+  for(i=0;i<n;i++)
+  {
+    min=i;
+    for(j=i+1;j<n;j++)
+    {
+      if(array[j]<array[min])
+        min=j;
+    }
+    temp=array[i];
+    array[i]=array[min];
+    array[min]=temp;
+  }
+
+  //code end here...
+  printf("Sorted array\n");
+  for(i=0;i<n;i++)
+  printf("%d\t",array[i]);
+  return 0;
+}
