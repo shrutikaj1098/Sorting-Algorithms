@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main(void) {
+  printf("Insertion sort\n");
+  int array[10],i,c,j,key;
+  printf("Enter no. of elements to be sorted\n");
+  scanf("%d",&c);
+  printf("Enter %d elements to be sorted in an array\n ",c);
+  for(i=0;i<c;i++)
+  scanf("%d",&array[i]);
+
+  //Insertion sort code...
+
+  for(j=1;j<c;j++)
+  {
+  key=array[j];
+  i=j-1;
+  while(i>=0 && array[i]>=key)
+  {
+    array[i+1]=array[i];
+    i=i-1;
+  }
+    array[i+1]=key;
+  
+  }
+
+  //code end here...
+  
+  printf("Sorted array\n");
+  for(i=0;i<c;i++)
+  printf("%d\t",array[i]);
+  return 0;
+}
